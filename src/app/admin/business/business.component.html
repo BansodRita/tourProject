@@ -1,0 +1,81 @@
+<div class="container" style="border-top: 2px solid;">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="businessForm" style="margin: 129px auto; width:60%">
+      
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">business Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="businessName"
+            placeholder="business Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">business Descrition</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="businessDescription"
+            placeholder="business Descrition">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="file" (change)="onchangefile($event)" class="form-control" id="exampleInputPassword1"
+            formControlName="Image">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">business Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="businessPrice"
+            placeholder="business Itinerary">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">business Itinerary</label>
+         
+            <ck-editor name="editor1" [(ngModel)]="editorValue1" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="businessItinerary"></ck-editor>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">business Includes</label>
+
+            <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="businessIncludes"></ck-editor>
+        </div>
+        <button type="submit" (click)="insertData()" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="submit" (click)="listOfbusiness()" class="btn btn-primary">List</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+                   
+          <th scope="col">business Name</th>
+          <th scope="col">business Description</th>
+          <th scope="col">business price</th>
+          <th scope="col">Image</th>
+         
+          <th scope="col">Include</th>
+          <th scope="col">Itinerary</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of businessList.resultbusiness">
+       
+          <td>{{item.businessName}}</td>
+          <td>{{item.businessDescription}}</td>
+          <td>{{item.businessPrice}}</td>
+          <td><img src="{{item.businessImage}}" width="150px" /></td>
+          <td innerHtml="{{item.businessIncludes}}">{{item.businessIncludes}}</td>
+          <td innerHtml="{{item.businessItinerary}}">{{item.businessItinerary}}</td>
+     <td>
+            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfbusiness(item._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

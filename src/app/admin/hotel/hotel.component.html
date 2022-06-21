@@ -1,0 +1,81 @@
+<div class="container" style="border-top: 2px solid;">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="hotelForm" style="margin: 129px auto; width:60%">
+      
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">hotel Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="hotelName"
+            placeholder="hotel Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">hotel Descrition</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="hotelDescription"
+            placeholder="hotel Descrition">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="file" (change)="onchangefile($event)" class="form-control" id="exampleInputPassword1"
+            formControlName="Image">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">hotel Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="hotelPrice"
+            placeholder="hotel Itinerary">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">hotel Itinerary</label>
+         
+            <ck-editor name="editor1" [(ngModel)]="editorValue1" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="hotelItinerary"></ck-editor>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">hotel Includes</label>
+
+            <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="hotelIncludes"></ck-editor>
+        </div>
+        <button type="submit" (click)="insertData()" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="submit" (click)="listOfhotel()" class="btn btn-primary">List</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+                   
+          <th scope="col">hotel Name</th>
+          <th scope="col">hotel Description</th>
+          <th scope="col">hotel price</th>
+          <th scope="col">Image</th>
+         
+          <th scope="col">Include</th>
+          <th scope="col">Itinerary</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of hotelList.resultPackage">
+       
+          <td>{{item.hotelName}}</td>
+          <td>{{item.hotelDescription}}</td>
+          <td>{{item.hotelPrice}}</td>
+          <td><img src="{{item.hotelImage}}" width="150px" /></td>
+          <td innerHtml="{{item.hotelIncludes}}">{{item.hotelIncludes}}</td>
+          <td innerHtml="{{item.hotelItinerary}}">{{item.hotelItinerary}}</td>
+     <td>
+            <button type="submit" routerLink="/admin/updatehotel/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfhotel(item._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

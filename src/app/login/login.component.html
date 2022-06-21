@@ -1,0 +1,13 @@
+<div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Log in</h2>
+  
+    <form [formGroup]="loginForm" class="login-container">
+      <p><input type="text" id="email" formControlName="adminEmail" placeholder="Email" ></p>
+
+
+      <p><input type="password" formControlName="adminPassword" id="pass" placeholder="Password"></p>
+      <p><input type="submit" value="Log in" (click)="login()"></p>
+    </form>
+  </div>

@@ -1,0 +1,81 @@
+<div class="container" style="border-top: 2px solid;">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="adventureForm" style="margin: 129px auto; width:60%">
+      
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">adventure Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="adventureName"
+            placeholder="adventure Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">adventure Descrition</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="adventureDescription"
+            placeholder="adventure Descrition">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="file" (change)="onchangefile($event)" class="form-control" id="exampleInputPassword1"
+            formControlName="Image">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">adventure Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="adventurePrice"
+            placeholder="adventure Itinerary">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">adventure Itinerary</label>
+         
+            <ck-editor name="editor1" [(ngModel)]="editorValue1" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="adventureItinerary"></ck-editor>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">adventure Includes</label>
+
+            <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="adventureIncludes"></ck-editor>
+        </div>
+        <button type="submit" (click)="insertData()" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="submit" (click)="listOfadventure()" class="btn btn-primary">List</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+                   
+          <th scope="col">adventure Name</th>
+          <th scope="col">adventure Description</th>
+          <th scope="col">adventure price</th>
+          <th scope="col">Image</th>
+         
+          <th scope="col">Include</th>
+          <th scope="col">Itinerary</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of adventureList.resultadventure">
+       
+          <td>{{item.adventureName}}</td>
+          <td>{{item.adventureDescription}}</td>
+          <td>{{item.adventurePrice}}</td>
+          <td><img src="{{item.adventureImage}}" width="150px" /></td>
+          <td innerHtml="{{item.adventureIncludes}}">{{item.adventureIncludes}}</td>
+          <td innerHtml="{{item.adventureItinerary}}">{{item.adventureItinerary}}</td>
+     <td>
+            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfadventure(item._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

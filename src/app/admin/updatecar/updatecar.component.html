@@ -1,0 +1,81 @@
+<div class="container" style="border-top: 2px solid;">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="carForm" style="margin: 129px auto; width:60%">
+      
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">car Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="carName"
+            placeholder="car Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">car Descrition</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="carDescription"
+            placeholder="car Descrition">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input type="file" (change)="onchangefile($event)" class="form-control" id="exampleInputPassword1"
+            formControlName="Image">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">car Price</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" formControlName="carPrice"
+            placeholder="car Itinerary">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">car Itinerary</label>
+         
+            <ck-editor name="editor1" [(ngModel)]="editorValue1" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="carItinerary"></ck-editor>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">car Includes</label>
+
+            <ck-editor name="editor1" [(ngModel)]="editorValue" skin="moono-lisa" language="en" [fullPage]="true"
+              formControlName="carIncludes"></ck-editor>
+        </div>
+        <button type="submit" (click)="insertData()" class="btn btn-primary">Submit</button>&nbsp;
+        <button type="submit" (click)="listOfcar()" class="btn btn-primary">List</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+                   
+          <th scope="col">car Name</th>
+          <th scope="col">car Description</th>
+          <th scope="col">car price</th>
+          <th scope="col">Image</th>
+         
+          <th scope="col">Include</th>
+          <th scope="col">Itinerary</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of carList.resultcar">
+       
+          <td>{{item.carName}}</td>
+          <td>{{item.carDescription}}</td>
+          <td>{{item.carPrice}}</td>
+          <td><img src="{{item.carImage}}" width="150px" /></td>
+          <td innerHtml="{{item.carIncludes}}">{{item.carIncludes}}</td>
+          <td innerHtml="{{item.carItinerary}}">{{item.carItinerary}}</td>
+     <td>
+            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfcar(item._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

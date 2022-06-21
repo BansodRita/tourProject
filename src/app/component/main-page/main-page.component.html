@@ -1,0 +1,176 @@
+<div id="fh5co-wrapper">
+  <div id="fh5co-page">
+
+
+
+  <!-- end:header-top -->
+
+  <div class="fh5co-hero">
+    <div class="fh5co-overlay"></div>
+    <div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(assets/images/coverBg.jpg);">
+      <div class="desc">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-5 col-md-5">
+              <div class="tabulation animate-box">
+                <h3 style="color:#F78536; text-align: center; padding-top:20px">Travel Info</h3>
+                <p style="color:black; padding:20px;text-align:justify">A travel agent is a person who has full knowledge of tourist product – destinations, modes of travel, climate, accommodation, and other areas of the service sector. He acts on the behalf of product providers/principles and in return gets a commission. Technically, a travel agent is an owner or manager of an agency, but other employees are responsible for advising tourists and selling packages tours/individual components of travel products.</p>
+                <p style="color:black; padding:10px;text-align:justify">A travel agent may be an individual /firm or corporation which is commonly known as a travel agency. An agency means the office of travel agent or organization where all travel goods and services are assembled and coordinated for the smooth conduct of travel agency business.</p>
+              </div>
+            </div>
+            <div class="desc2 animate-box">
+              <div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
+                <p>HandCrafted by <a href="http://frehtml5.co/" target="_blank" class="fh5co-site-name">FreeHTML5.co</a></p>
+                <h2>Exclusive Limited Time Offer</h2>
+                <h3>Fly to Hong Kong via Los Angeles, USA</h3>
+                <span class="price">$599</span>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+  <div id="fh5co-tours" class="fh5co-section-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+          <h3>Our Packages</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+        </div>
+      </div>
+      <div class="row">
+        <ng-container *ngFor="let item of packageList.resultPackage">
+        <div class="col-12 col-sm-8 col-md-4 col-lg-4">
+          <div class="card">
+            <img class="card-img" src={{item.packageImage}} width="100%" alt="Vans">
+            <div class="card-img-overlay d-flex justify-content-end">
+              <a href="#" class="card-link text-danger like">
+                <i class="fas fa-heart"></i>
+              </a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title " style="padding-top:20px;">{{item.packageName}}</h4>
+              
+              <!-- <p class="card-text">
+                The Vans All-Weather MTE Collection features footwear and apparel designed to withstand the elements whilst still looking cool.             </p> -->
+              
+              <div class="buy d-flex justify-content-between align-items-center">
+                <div class="price text-success"><h5 class="mt-4">${{item.packagePrice}}</h5></div>
+                <p><a class="btn btn-primary btn-lg" routerLink="single/{{item._id}}">View More</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <div id="fh5co-destination">
+    <div class="tour-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <ul id="fh5co-destination-list" class="animate-box">
+            <li class="one-forth text-center" style="background-image: url(assets/images/post1.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Los Angeles</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post2.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Hongkong</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post3.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Italy</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post4.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Philippines</h2>
+                </div>
+              </a>
+            </li>
+
+            <li class="one-forth text-center" style="background-image: url(assets/images/post5.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Japan</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-half text-center">
+              <div class="title-bg">
+                <div class="case-studies-summary">
+                  <h2>Most Popular Destinations</h2>
+                  <span><a href="#">View All Destinations</a></span>
+                </div>
+              </div>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post4.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Paris</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post6.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Singapore</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post7.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Madagascar</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post8.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Egypt</h2>
+                </div>
+              </a>
+            </li>
+            <li class="one-forth text-center" style="background-image: url(assets/images/post1.jpg); ">
+              <a href="#">
+                <div class="case-studies-summary">
+                  <h2>Indonesia</h2>
+                </div>
+              </a>
+            </li>
+          </ul>		
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- fh5co-blog-section -->
+  
+
+
+
+
+</div>
+<!-- END fh5co-page -->
+
+</div>
+<!-- END fh5co-wrapper -->
