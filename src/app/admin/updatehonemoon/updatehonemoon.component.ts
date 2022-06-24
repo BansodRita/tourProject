@@ -12,10 +12,10 @@ export class UpdatehonemoonComponent implements OnInit {
   constructor(private api: ApiServiceService, private fb: FormBuilder, private router:ActivatedRoute ) { }
   public editorValue: string = '';
   public editorValue1: string = '';
-  //hotelForm: FormGroup;
+  //honeymoonForm: FormGroup;
   categoryList: any = [];
   selectedfile: File;
-  hotelList: any = [];
+  honeymoonList: any = [];
 
   honeymoonForm= new FormGroup({
     id: new FormControl(''),
@@ -30,7 +30,7 @@ export class UpdatehonemoonComponent implements OnInit {
   })
   ngOnInit(): void {
 console.log(this.router.snapshot.params.id)
-this.api.getcurrent(this.router.snapshot.params.id).subscribe((reasult)=>{
+this.api.getcurrenthoneymoon(this.router.snapshot.params.id).subscribe((reasult)=>{
   this.honeymoonForm=new FormGroup({
     id: new FormControl(reasult['_id']),
       fK: new FormControl(reasult['fk']),
@@ -63,7 +63,7 @@ this.api.getcurrent(this.router.snapshot.params.id).subscribe((reasult)=>{
   }
   updateData(){
     console.log(this.honeymoonForm.value);
-    this.api.updatehotel(this.router.snapshot.params.id, this.honeymoonForm.value).subscribe(result=>{
+    this.api.updatehoneymoon(this.router.snapshot.params.id, this.honeymoonForm.value).subscribe(result=>{
       console.log(result);
     })
   }
@@ -71,25 +71,25 @@ this.api.getcurrent(this.router.snapshot.params.id).subscribe((reasult)=>{
     const fd = new FormData();
     fd.append('Image', this.selectedfile, this.selectedfile.name);
     fd.append('fK', this.honeymoonForm.value.fK);
-    fd.append('hotelName', this.honeymoonForm.value.hotelName);
-    fd.append('hotelDescription', this.honeymoonForm.value.hotelDescription);
-    fd.append('hotelPrice', this.honeymoonForm.value.hotelPrice);
-    fd.append('hotelItinerary', this.honeymoonForm.value.hotelItinerary);
-    fd.append('hotelIncludes', this.honeymoonForm.value.hotelIncludes);
+    fd.append('honeymoonName', this.honeymoonForm.value.honeymoonName);
+    fd.append('honeymoonDescription', this.honeymoonForm.value.honeymoonDescription);
+    fd.append('honeymoonPrice', this.honeymoonForm.value.honeymoonPrice);
+    fd.append('honeymoonItinerary', this.honeymoonForm.value.honeymoonItinerary);
+    fd.append('honeymoonIncludes', this.honeymoonForm.value.honeymoonIncludes);
     this.api.addhoneymoon(fd).subscribe((data) => {
       console.log(data);
     })
     this.clearForm();
   }
   listhoneymoon() {
-    this.api.listhotel().subscribe(res => {
+    this.api.listhoneymoon().subscribe(res => {
       console.log(res);
-      this.hotelList = res
-      console.log(this.hotelList);
+      this.honeymoonList = res
+      console.log(this.honeymoonList);
     })
   }
   deletehoneymoon(id) {
-    this.api.deletehotel(id).subscribe((res) => {
+    this.api.deletehoneymoon(id).subscribe((res) => {
       let result = res;
       alert(JSON.stringify(result));
       this.listhoneymoon();

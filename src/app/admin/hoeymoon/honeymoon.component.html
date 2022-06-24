@@ -61,7 +61,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of honeymoonList.resulthoneymoon">
+        <tr *ngFor="let item of honeymoonList.resultfamily">
        
           <td>{{item.honeymoonName}}</td>
           <td>{{item.honeymoonDescription}}</td>
@@ -70,7 +70,7 @@
           <td innerHtml="{{item.honeymoonIncludes}}">{{item.honeymoonIncludes}}</td>
           <td innerHtml="{{item.honeymoonItinerary}}">{{item.honeymoonItinerary}}</td>
      <td>
-            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" routerLink="/admin/updatehoneymoon/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
             <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfhoneymoon(item._id)">Delete</button>
           </td>
         </tr>

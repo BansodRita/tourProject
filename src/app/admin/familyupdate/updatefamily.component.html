@@ -37,48 +37,10 @@
                 formControlName="familyIncludes"></ck-editor>
           </div>
           <button type="submit" (click)="updateData()" class="btn btn-primary">Submit</button>&nbsp;
-          <button type="submit" (click)="listOffamily()" class="btn btn-primary">List</button>&nbsp;
+          <a routerLink="/admin/family"><button  class="btn btn-primary">List</button></a>&nbsp;
   
         </form>
       </div>
     </div>
   </div>
   
-  <div class="container">
-    <div class="row">
-      <table class="table">
-        <thead>
-          <tr>
-         
-            <th scope="col">family Name</th>
-            <th scope="col">family Description</th>
-            <th scope="col">family price</th>
-            <th scope="col">Image</th>
-           
-            <th scope="col">Include</th>
-            <th scope="col">Itinerary</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of familyList.resultfamily">
-         
-            <td>{{item.familyName}}</td>
-            <td>{{item.familyDescription}}</td>
-            <td>{{item.familyPrice}}</td>
-            <td><img src="{{item.familyImage}}" width="150px" /></td>
-            <td innerHtml="{{item.familyIncludes}}">{{item.familyIncludes}}</td>
-            <td innerHtml="{{item.familyItinerary}}">{{item.familyItinerary}}</td>
-            
-            <!-- <td>{{item.familyIncludes}}</td> -->
-            
-       
-            <td><button type="submit" (click)="deleteOffamily(item._id)" class="btn btn-primary">delete</button>&nbsp;
-              
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  
-  </div>

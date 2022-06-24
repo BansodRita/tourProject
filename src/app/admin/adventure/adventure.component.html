@@ -61,7 +61,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of adventureList.resultadventure">
+        <tr *ngFor="let item of adventureList.resultfamily">
        
           <td>{{item.adventureName}}</td>
           <td>{{item.adventureDescription}}</td>
@@ -70,7 +70,7 @@
           <td innerHtml="{{item.adventureIncludes}}">{{item.adventureIncludes}}</td>
           <td innerHtml="{{item.adventureItinerary}}">{{item.adventureItinerary}}</td>
      <td>
-            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" routerLink="/admin/adv/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
             <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfadventure(item._id)">Delete</button>
           </td>
         </tr>

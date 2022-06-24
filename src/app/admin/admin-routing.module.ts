@@ -13,6 +13,9 @@ import { BusinessComponent } from './business/business.component';
 import { AdventureComponent } from './adventure/adventure.component';
 import { UpdatefamilyComponent } from './familyupdate/updatefamily.component';
 import { UpdateCarComponent } from './updatecar/updatecar.component';
+import { UpdatehonemoonComponent } from './updatehonemoon/updatehonemoon.component';
+import { UpdatebusinessComponent } from './businessupdate/updatebusiness.component';
+import { UpdateadventureComponent } from './adventureupdate/updateadventure.component';
 
 const lazyroutes: Routes = [
   { path: '', component: AdminComponent,
@@ -26,6 +29,9 @@ children:[
   {path:'updatefamily/:id', component:UpdatefamilyComponent},
   {path:'updatehotel/:id', component:UpdateHotelComponent},
   {path:'updatecar/:id', component:UpdateCarComponent},
+  {path:'updatehoneymoon/:id', component:UpdatehonemoonComponent},
+  {path:'business/:id', component:UpdatebusinessComponent},
+  {path:'adv/:id', component:UpdateadventureComponent},
   {path:'family', component:FamilyComponent},
   {path:'honeymoon', component:HoneymoonComponent},
   {path:'hotel', component:HotelComponent},

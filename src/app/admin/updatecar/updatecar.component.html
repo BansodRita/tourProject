@@ -15,7 +15,7 @@
             placeholder="car Descrition">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Image</label>
+          <label for="Image">Image</label>
           <input type="file" (change)="onchangefile($event)" class="form-control" id="exampleInputPassword1"
             formControlName="Image">
         </div>
@@ -37,45 +37,10 @@
               formControlName="carIncludes"></ck-editor>
         </div>
         <button type="submit" (click)="insertData()" class="btn btn-primary">Submit</button>&nbsp;
-        <button type="submit" (click)="listOfcar()" class="btn btn-primary">List</button>
+        <a routerLink="/admin/car"><button class="btn btn-primary">List</button></a>
 
       </form>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-                   
-          <th scope="col">car Name</th>
-          <th scope="col">car Description</th>
-          <th scope="col">car price</th>
-          <th scope="col">Image</th>
-         
-          <th scope="col">Include</th>
-          <th scope="col">Itinerary</th>
-          <th scope="col">Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of carList.resultcar">
-       
-          <td>{{item.carName}}</td>
-          <td>{{item.carDescription}}</td>
-          <td>{{item.carPrice}}</td>
-          <td><img src="{{item.carImage}}" width="150px" /></td>
-          <td innerHtml="{{item.carIncludes}}">{{item.carIncludes}}</td>
-          <td innerHtml="{{item.carItinerary}}">{{item.carItinerary}}</td>
-     <td>
-            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
-            <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfcar(item._id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</div>

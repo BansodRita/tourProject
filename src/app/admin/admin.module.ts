@@ -18,9 +18,14 @@ import { CarComponent } from './car/car.component';
 import { UpdatehonemoonComponent } from './updatehonemoon/updatehonemoon.component';
 import { UpdatefamilyComponent } from './familyupdate/updatefamily.component';
 import { UpdateCarComponent } from './updatecar/updatecar.component';
+import { UpdatebusinessComponent } from './businessupdate/updatebusiness.component';
+import { UpdateadventureComponent } from './adventureupdate/updateadventure.component';
 
 @NgModule({
-  declarations: [AdminComponent, CategoryComponent, HotelComponent, OrdersComponent, UpdateComponent, UpdateHotelComponent, FamilyComponent, HoneymoonComponent, BusinessComponent, AdventureComponent, CarComponent, UpdatehonemoonComponent, UpdatefamilyComponent, UpdateCarComponent],
+  declarations: [AdminComponent, CategoryComponent, HotelComponent, OrdersComponent, UpdateComponent, UpdateHotelComponent, FamilyComponent, HoneymoonComponent, BusinessComponent, AdventureComponent, CarComponent, UpdatehonemoonComponent, UpdatefamilyComponent, UpdateCarComponent, UpdatebusinessComponent, UpdateadventureComponent ],
+
+
+
   imports: [
     CommonModule,
     AdminRoutingModule,

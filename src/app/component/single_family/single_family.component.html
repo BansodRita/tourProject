@@ -1,0 +1,22 @@
+<div class="container my-5" style="width:85%">
+    <img class=" my-3"  width="100%" src={{packageInfo.familyImage}} />
+    
+    <div style="max-width: 100%; top: -80px;" class="mx-auto text-secondary">
+        <h3 class="font-weight-bold text-dark">{{packageInfo.hotelName}}</h3>
+      <p class="my-2" style="line-height: 2;">{{packageInfo.familyDescription}}</p>
+      <br>
+      <br>
+   
+      <p class="my-2" style="line-height: 2;" innerHtml="{{packageInfo.familyItinerary}}">{{packageInfo.familyItinerary}}</p>
+      
+      <br>    
+      
+      
+      <br>
+  
+      <p class="my-2" style="line-height: 2;" innerHtml="{{packageInfo.familyIncludes}}">{{packageInfo.familyIncludes}}</p>
+      
+      <p><a class="btn btn-primary btn-lg">Rs&nbsp;{{packageInfo.familyPrice}}</a></p>
+      
+    </div>
+  </div>

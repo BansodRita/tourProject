@@ -11,8 +11,11 @@ import { FooterComponent } from './component/footer/footer.component';
 import { LayoutComponent } from './component/layout/layout.component';
 import { ApiServiceService } from './api-service.service';
 import {CKEditorModule} from 'ngx-ckeditor';
-import { AllpakagesComponent } from './component/allpakages/allpakages.component';
-import { SingleComponent } from './component/single/single.component';
+import { HotelComponent } from './component/hotel/hotel.component';
+import { SingleComponent } from './component/single_hotel/single.component';
+
+import { CarPackageComponent } from './component/car/carpackage.component';
+import { familyComponent } from './component/family/family.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +25,10 @@ import { SingleComponent } from './component/single/single.component';
     HeaderComponent,
     FooterComponent,
     LayoutComponent,
-    AllpakagesComponent,
-    SingleComponent
+    HotelComponent,
+    SingleComponent,
+    familyComponent,
+    CarPackageComponent
   ],
   imports: [
     BrowserModule,

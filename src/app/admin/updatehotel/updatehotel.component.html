@@ -37,48 +37,11 @@
                 formControlName="hotelIncludes"></ck-editor>
           </div>
           <button type="submit" (click)="updateData()" class="btn btn-primary">Submit</button>&nbsp;
-          <button type="submit" (click)="listOfhotel()" class="btn btn-primary">List</button>&nbsp;
+          <a routerLink="/admin/hotel"><button class="btn btn-primary">List</button></a>&nbsp;
   
         </form>
       </div>
     </div>
   </div>
   
-  <div class="container">
-    <div class="row">
-      <table class="table">
-        <thead>
-          <tr>
-         
-            <th scope="col">hotel Name</th>
-            <th scope="col">hotel Description</th>
-            <th scope="col">hotel price</th>
-            <th scope="col">Image</th>
-           
-            <th scope="col">Include</th>
-            <th scope="col">Itinerary</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of hotelList.resultPackage">
-         
-            <td>{{item.hotelName}}</td>
-            <td>{{item.hotelDescription}}</td>
-            <td>{{item.hotelPrice}}</td>
-            <td><img src="{{item.hotelImage}}" width="150px" /></td>
-            <td innerHtml="{{item.hotelIncludes}}">{{item.hotelIncludes}}</td>
-            <td innerHtml="{{item.hotelItinerary}}">{{item.hotelItinerary}}</td>
-            
-            <!-- <td>{{item.hotelIncludes}}</td> -->
-            
-       
-            <td><button type="submit" (click)="deleteOfhotel(item._id)" class="btn btn-primary">delete</button>
-            
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   
-  </div>

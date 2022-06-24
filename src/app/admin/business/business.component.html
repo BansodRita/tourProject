@@ -61,7 +61,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of businessList.resultbusiness">
+        <tr *ngFor="let item of businessList.resultfamily">
        
           <td>{{item.businessName}}</td>
           <td>{{item.businessDescription}}</td>
@@ -70,7 +70,7 @@
           <td innerHtml="{{item.businessIncludes}}">{{item.businessIncludes}}</td>
           <td innerHtml="{{item.businessItinerary}}">{{item.businessItinerary}}</td>
      <td>
-            <button type="submit" routerLink="/admin/updatep/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
+            <button type="submit" routerLink="/admin/business/{{item._id}}" class="btn btn-primary btn-sm">Update</button><br><br>
             <button type="submit" class="btn btn-primary btn-sm" (click)="deleteOfbusiness(item._id)">Delete</button>
           </td>
         </tr>
